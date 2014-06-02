@@ -1,15 +1,27 @@
 *{
 	border: 1px dotted black;
 	font-family: Raleway;
+} 
+/* 
+Can't use this yet because some of my images have white 
+backgrounds (instead of clear) that stand out from the toast
+
+body{
+	background: url(light_toast.png) repeat 0 0;
+} 
+*/
+.navbar{
+	background-color: black;
 }
 .jumbotron{
 	background:url(sunset.jpg);
 	background-size:cover;
-	height:35em;
+	height:60%;
+	margin-top: 5%;
 }
 .img-circle{
-	height:300px;
-	width:300px;
+	height:30%;
+	width:30%;
 	margin-left:auto;
 	margin-right:auto;
 	display:block;
@@ -20,3 +32,10 @@
 	margin:auto;
 	text-align: center;
 }
+.seal{
+	height:6em;
+	width: 6em;
+	margin-left: -1em;
+}
+
+
