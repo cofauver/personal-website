@@ -3,4 +3,6 @@ personal-website
 
 Code for my personal website, coryfauver.com
 
-Michael was here
+Michael wuz here
+
+This is a controvertial change
