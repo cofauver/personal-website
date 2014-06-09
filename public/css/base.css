@@ -14,7 +14,7 @@ body{
 	background-color: black;
 }
 .jumbotron{
-	background:url(sunset.jpg);
+	background:url('../images/sunset.jpg');
 	background-size:cover;
 	height:60%;
 	margin-top: 5%;
