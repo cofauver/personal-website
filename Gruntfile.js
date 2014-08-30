@@ -9,6 +9,10 @@
 
 module.exports = function (grunt) {
 
+
+  // Project configuration.
+  var pkg = require('./package.json');
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -138,11 +142,7 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= yeoman.dist %>/*',
-            '!<%= yeoman.dist %>/.git*',
-            '!<%= yeoman.dist %>/Procfile',
-            '!<%= yeoman.dist %>/package.json',
-            '!<%= yeoman.dist %>/web.js',
-            '!<%= yeoman.dist %>/node_modules'
+            '!<%= yeoman.dist %>/.git*'
           ]
         }]
       },
@@ -361,7 +361,6 @@ module.exports = function (grunt) {
       }
     },
 
-    //For deployment
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -369,16 +368,26 @@ module.exports = function (grunt) {
         push: true,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
-
-    //For deployment
-    heroku: {
-      options: {
-        remote: 'git@heroku.com:corys-personal-website.git',
-        branch: 'master'
+      pages: {
+        options: {
+          remote: 'git@github.com:example_user/example_webapp.git',
+          branch: 'gh-pages'
+        }
+      },
+      heroku: {
+        options: {
+          remote: 'git@heroku.com:example-heroku-webapp-1988.git',
+          branch: 'master',
+          tag: pkg.version
+        }
+      },
+      local: {
+        options: {
+          remote: '../',
+          branch: 'build'
+        }
       }
     }
- }
-
   });
 
 
@@ -396,9 +405,6 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
-
-  //For deployment
-  grunt.registerTask('deploy', ['buildcontrol']);
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
@@ -435,4 +441,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-build-control');
 };
