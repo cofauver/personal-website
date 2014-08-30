@@ -370,13 +370,13 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:example_user/example_webapp.git',
+          remote: 'git@github.com:cofauver/personal-website.git',
           branch: 'gh-pages'
         }
       },
       heroku: {
         options: {
-          remote: 'git@heroku.com:example-heroku-webapp-1988.git',
+          remote: 'git@heroku.com:desolate-atoll-3979.git',
           branch: 'master',
           tag: pkg.version
         }
