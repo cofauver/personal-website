@@ -136,7 +136,8 @@ h1{
 
 .resumeicon{
   float:right;
-  max-height: 12%
+  height: 12%;
+  width: 12%;
 }
 
 ul{
