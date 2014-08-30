@@ -373,7 +373,7 @@ module.exports = function (grunt) {
     //For deployment
     heroku: {
       options: {
-        remote: 'git@heroku.com:heroku-app-1985.git',
+        remote: 'git@heroku.com:corys-personal-website.git',
         branch: 'master'
       }
     }
