@@ -137,8 +137,12 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git*'
+            '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/.git*',
+            '!<%= yeoman.dist %>/Procfile',
+            '!<%= yeoman.dist %>/package.json',
+            '!<%= yeoman.dist %>/web.js',
+            '!<%= yeoman.dist %>/node_modules'
           ]
         }]
       },
@@ -355,7 +359,26 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    //For deployment
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+
+    //For deployment
+    heroku: {
+      options: {
+        remote: 'git@heroku.com:heroku-app-1985.git',
+        branch: 'master'
+      }
     }
+ }
+
   });
 
 
@@ -373,6 +396,9 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  //For deployment
+  grunt.registerTask('deploy', ['buildcontrol']);
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
