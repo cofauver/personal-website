@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="container">
+    <ul class="nav nav-pills nav-justified">
+      <li ng-class="{active: activeTab==='/'}" class="col-lg-4 col-xs-4">
+      	<a ng-href="#" ng-click="activeTab='/'">
+      		<span class="glyphicon glyphicon-home"></span>
+      	</a>
+      </li>
+      <li ng-class="{active: activeTab==='/about'}" class="col-lg-4 col-xs-4">
+      	<a ng-href="#/about" ng-click="activeTab='/about'">
+      		<span class="glyphicon glyphicon-user"></span>
+      	</a>
+      </li>
+      <li ng-class="{active: activeTab==='/portfolio'}" class="col-lg-4 col-xs-4">
+      	<a ng-href="#/portfolio" ng-click="activeTab='/portfolio'">
+      		<span class="glyphicon glyphicon-list"></span>
+      	</a>
+      </li>
+    </ul>
+  </div>
+</div>
