@@ -13,7 +13,7 @@ a:hover {
   color:black;
  }
 
- body {
+body {
   background-color: #717171;
  }
 
@@ -215,6 +215,7 @@ h1{
 .portfolio-list{
   padding-left: 0; 
 }
-.ul{
+
+ul{
   list-style-type: none;
 }
