@@ -85,9 +85,7 @@ h1{
 /* Customize container */
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+  
 }
 
 .container-narrow > hr {
@@ -142,6 +140,9 @@ h1{
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -159,7 +160,7 @@ h1{
   }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 768px){
   .nav > li {
     display:inline-block;
   }
@@ -189,7 +190,7 @@ h1{
   width: 12%;
 }
 
-.portfolio-title{
+.portfolio-text{
   text-align: left;
   margin-left: 15%;
 }
@@ -213,7 +214,12 @@ h1{
 }
 
 .portfolio-list{
-  padding-left: 0; 
+  padding-left: 0;
+  text-align: left; 
+}
+
+.linky-text{
+  color: #00A4D8;
 }
 
 ul{
